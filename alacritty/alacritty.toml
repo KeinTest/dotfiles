@@ -1,0 +1,33 @@
+[window]
+
+opacity = 0.75
+
+padding.x = 12
+padding.y = 12
+
+decorations = "Full"
+decorations_theme_variant = "Light" # "Dark"
+
+[font]
+size = 16.0
+
+[font.bold]
+family = "SFMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "SFMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "SFMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "SFMono Nerd Font"
+style = "Bold"
+
+[colors.primary]
+
+background = "#000000"
+foreground = "#ffffff"

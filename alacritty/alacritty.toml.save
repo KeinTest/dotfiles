@@ -1,0 +1,33 @@
+[window]
+
+opacity = 0.75
+
+padding.x = 125
+padding.y = 15
+
+decorations = "Full"
+decorations_theme_variant = "Light" # "Dark"
+
+[font]
+size = 16.0
+
+[font.bold]
+family = "Roboto Mono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "Roboto Mono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "Roboto Mono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Roboto Mono Nerd Font"
+style = "Regular"
+
+[colors.primary]
+
+background = "#000000"
+foreground = "#ffffff"

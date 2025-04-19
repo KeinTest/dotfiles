@@ -1,0 +1,24 @@
+
+#############################
+### ENVIRONMENT VARIABLES ###
+#############################
+
+# See https://wiki.hyprland.org/Configuring/Environment-variables/
+
+env = HYPRCURSOR_THEME,NotwaitaBlack
+env = XCURSOR_SIZE,24
+env = HYPRCURSOR_SIZE,24
+
+plugin {
+    csgo-vulkan-fix {
+        res_w = 1600
+        res_h = 1200
+
+        # NOT a regex! This is a string and has to exactly match initial_class
+        class = "SDL Application"
+
+        # Whether to fix the mouse position. A select few apps might be wonky with this.
+        fix_mouse = true
+    }
+}
+

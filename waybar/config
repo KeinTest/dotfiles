@@ -1,0 +1,177 @@
+{
+    "reload_style_on_change": true,
+    "reload_config_on_change": true,
+    "position": "top",
+    "modules-left": ["custom/arch","hyprland/workspaces",],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["custom/hyprpicker","tray","wireplumber","bluetooth","clock","custom/powermenu"],
+
+    "user": {
+        "format": "{user}",
+        "on-click": "hyprctl dispatch exit 1"
+    },
+
+    "mpris": {
+        "format-playing": " {dynamic}",
+        "format-paused": " {dynamic}",
+        "dynamic-order": ["artist", "title"]
+    },
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "format-icons": {
+            "default": "◯",
+            "active": "⬤",
+        },
+    },
+
+     "hyprland/window": {
+    "format": "{initialTitle}",
+    "rewrite": {
+        "(.*) — Mozilla Firefox": "🌎 $1",
+        "(.*) - fish": "> [$1]"
+    },
+    "separate-outputs": true
+    },
+
+    "custom/os": {
+        "format": "s",
+        "on-click": "fuzzel --font=\"JetBrains Mono\" --icon-theme=Skeuowaita --width=40 --lines=25 --background=00000080 --text-color=ffffffff --selection-color=9ec2ffff --selection-text-color=353940ff --anchor=bottom-left",
+        "tooltip": false
+    },
+    
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "<b>  {:%H:%M   󰃭  %d. %b %Y}</b>",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-scroll-up": "tz_up",
+                    "on-scroll-down": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+		"format-icons": ["󰛨"]
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": " {ifname}",
+        "tooltip-format": " {ifname} via {gwaddr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠ {ifname}",
+        "format-alt": " {ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-bluetooth": " {icon} {volume}% {format_source}",
+        "format-bluetooth-muted": "  {icon} {format_source}",
+        "format-muted": "󰝟  {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "foot -a pw-top pw-top"
+    },
+    "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "on-click": "pavucontrol",
+    "max-volume": 150,
+    "scroll-step": 5,
+    "format-icons": {
+        "default": ["", "", ""]
+    },
+    "pulseaudio/slider": {
+    "min": 100,
+    "max": 1000,
+    "orientation": "vertical"
+    },
+    },
+    "bluetooth": {
+        "format": " 󰂯 ",
+        "format-disabled": " 󰂲 ",
+        "on-click": "blueman-manager",
+	    "format-connected": " {num_connections}",
+	    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	    "tooltip-format": "{num_connections} connected",
+	    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+    "group/hardware": {
+        "orientation": "horizontal",
+		"modules": [
+			"cpu",
+			"disk",
+			"memory"
+		]
+	},
+    "cpu": {
+    "interval": 10,
+    "format": "  {}% ",
+    "max-length": 10
+    },
+    "disk": {
+    "interval": 30,
+    "format": " {percentage_used}% ",
+    "path": "/"
+    },
+    "memory": {
+    "interval": 30,
+    "format": "  {}% ",
+    "max-length": 10
+    },
+    "custom/arch": {
+        "format": " 󰣇 ",
+        "on-click": "rofi -show drun",
+    },
+    "custom/powermenu": {
+        "format": "  ",
+        "on-click":"~/.config/rofi/run_powermenu.sh",
+    },
+    "custom/hyprpicker": {
+        "format": "  ",
+        "on-click":"hyprpicker --autocopy",
+    }
+}
+

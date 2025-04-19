@@ -1,0 +1,49 @@
+window {
+  border: 5px;
+  border-radius: 14px;
+  background-color: #101111;
+  opacity: 0.9;
+  font-size: 18px;
+  }
+  
+  #input {
+  margin: 0px;
+  color: #ffffff;
+  background-color: #101111;
+  border: none;
+  box-shadow: none;;
+  }
+  
+  #inner-box {
+  margin: 5px;
+  background-color: #101111;
+  }
+  
+  #outer-box {
+  margin: 5px;
+  background-color: #101111;
+  }
+  
+  #scroll {
+  margin: 5px;
+  background-color: #101111;
+  }
+  
+  #text {
+  margin: 5px;
+  color: #ffffff;
+  } 
+  #entry:selected {
+  background-color: #ffffff;
+  border: 0px;
+  border-radius: 7px;
+  }
+  #text:selected {
+  color: #101111;
+  }
+  expander > list > #entry {
+  background-color: #101111;
+  }
+  expander > list > #entry:selected {
+  background-color: #272727;
+  }

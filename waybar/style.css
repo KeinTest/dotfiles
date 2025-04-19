@@ -1,0 +1,387 @@
+@define-color black rgba(25, 25, 25, 1);
+@define-color red #f55861;
+@define-color purple #9262e9;
+@define-color orange #DF9F00;
+@define-color green #6ce057;
+@define-color arch #4DBCDF;
+@define-color yellow #FFF400;
+@define-color cyan #56b3de;
+@define-color orange #BE5504;
+@define-color black1 #4b4b4b;
+
+/* -----------------------------------------------------
+ * General 
+ * ----------------------------------------------------- */
+
+* {
+    font-family: "SF Pro Text 14", sans-serif;
+    font-weight: bolder;
+    border-style: solid;
+}
+
+window#waybar {
+    background-color: rgba(25, 25, 25, 0);
+    transition-property: background-color;
+    transition-duration: .5s;
+    border: 0px solid @black1;
+    border-radius: 0px;
+}
+
+/* -----------------------------------------------------
+ * Workspaces 
+ * ----------------------------------------------------- */
+
+#workspaces {
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+    color: black;
+    background-color: rgba(25, 25, 25, 1);
+    border: 1px solid @black1;
+    border-radius: 8px;
+    margin: 5px 10px;
+    padding: 0px;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 4px;
+    border: 0px;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    min-width: 30px;
+}
+
+
+#workspaces button.active {
+    color: @arch;
+    border-radius: 12px;
+    min-width: 40px;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+    color: @arch;
+    border-radius: 8px;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+#tooltip {
+    border-radius: 10px;
+    background-color: black;
+    opacity:0.8;
+    padding:20px;
+    margin:0px;
+}
+
+#tooltip label {
+    color: rgba(25, 25, 25, 0.75);
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+#window {
+    background: @black;
+    border-radius: 8px;
+    border: 1px solid @black1;
+    color: white;
+    font-size:16px;
+    font-weight:normal;
+    margin: 5px 10px;
+    padding: 4px;
+}
+
+window#waybar.empty #window {
+    background-color:transparent;
+}
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+#taskbar {
+    background: @backgroundlight;
+    border-radius: 15px;
+    font-weight: normal;
+    font-style: normal;
+    border: 1px solid @backgroundlight;
+}
+
+#taskbar button {
+    border-radius: 15px;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* -----------------------------------------------------
+ * Idle Inhibator
+ * ----------------------------------------------------- */
+
+ #idle_inhibitor {
+    margin-right: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: @iconcolor;
+}
+
+#idle_inhibitor.activated {
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: #dc2f2f;
+}
+
+/* -----------------------------------------------------
+ * Custom Modules
+ * ----------------------------------------------------- */
+
+#custom-arch {
+    font-size: 24px;
+    color: @arch;
+    background-color: @black;
+    border: 1px solid @black1;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+#custom-powermenu {
+    font-size: 20px;
+    color: @red;
+    background-color: @black;
+    border: 1px solid @black1;
+    border-radius: 8px;
+    margin: 8px 5px;
+}
+
+#custom-hyprpicker {
+    font-size: 20px;
+    color: @purple;
+    background-color: @black;
+    border: 1px solid @black1;
+    border-radius: 8px;
+    padding: 5px 3px;
+    margin: 8px;
+}
+
+/* -----------------------------------------------------
+ * Hardware Group
+ * ----------------------------------------------------- */
+
+ #disk,#memory,#cpu {
+    font-size:16px;
+    color: white;
+    border: 2px solid @black;
+    border-radius: 8px;
+    margin: 5px 4px;
+    padding: 4px;
+    background-color: @black;
+}
+
+#hardware{
+    background-color: @black;
+    border: 2px solid @black;
+    border-radius: 8px;
+    margin: 0px;
+}
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
+
+#clock {
+    background-color: @black;
+    font-size: 16px;
+    color: @yellow;
+    border: 1px solid @black1;
+    border-radius: 8px;
+    margin: 8px 5px;
+    padding: 4px;
+}
+
+/* -----------------------------------------------------
+ * Backlight
+ * ----------------------------------------------------- */
+
+ #backlight {
+    background-color: @black;
+    font-size: 16px;
+    color: white;
+    border-radius: 8px;
+    border: 1px solid @black1;
+    margin: 5px 5px;
+    padding: 4px;
+}
+
+/* -----------------------------------------------------
+ * Audio
+ * ----------------------------------------------------- */
+
+#wireplumber {
+    background-color: @black;
+    font-size: 17px;
+    color: @green;
+    border-radius: 8px;
+    border: 1px solid @black1;
+    margin: 8px 5px;
+    padding: 4px;
+}
+
+#wireplumber.muted {
+    background-color: @green;
+    color: @black;
+}
+
+/* -----------------------------------------------------
+ * Network
+ * ----------------------------------------------------- */
+
+#network {
+    background-color: @black;
+    font-size: 16px;
+    color: yellow;
+    border-radius: 8px;
+    border: 2px solid @orange;
+    margin: 5px 10px;
+    padding: 4px;
+}
+
+#network.ethernet {
+    background-color: white;
+    color: black;
+}
+
+#network.wifi {
+    background-color: white;
+    color: black;
+}
+
+/* -----------------------------------------------------
+ * Bluetooth
+ * ----------------------------------------------------- */
+
+ #bluetooth, #bluetooth.on, #bluetooth.connected {
+    background-color: @black;
+    font-size: 16px;
+    color: @cyan;
+    border-radius: 8px;
+    border: 1px solid @black1;
+    margin: 8px 5px;
+    padding: 4px;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+
+#battery {
+    background-color: white;
+    font-size: 16px;
+    color: @yellow;
+    border-radius: 15px;
+    margin: 5px 5px;
+    padding: 4px;
+}
+
+#battery.charging, #battery.plugged {
+    color: white;
+    background-color: black;
+}
+
+@keyframes blink {
+    to {
+        background-color: black;
+        color: red;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+
+#tray {
+    margin:0px 10px 0px 0px;
+    font-size: 16px;
+    color: white;
+    background-color: @black;
+    border-radius: 8px;
+    border: 1px solid @black1;
+    margin: 8px 5px;
+    padding: 4px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: black;
+}
+
+/* -----------------------------------------------------
+ * mpris
+ * ----------------------------------------------------- */
+
+ #mpris {
+    margin:0px 10px 0px 0px;
+    background-color: @black;
+    border-radius: 8px;
+    border: 2px solid @red;
+    color: @yellow;
+    margin: 5px 5px;
+    padding: 4px;
+}
+
+/* -----------------------------------------------------
+ * Other
+ * ----------------------------------------------------- */
+
+label:focus {
+    background-color: #000000;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
+#network {
+    background-color: #2980b9;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
